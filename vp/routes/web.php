@@ -22,11 +22,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get(GameController::getUrlCategory(), [GameController::class, 'categoryAction']);
 
-Route::post('game-shop/sendform', [FormSend::class, 'getForm'])->name("game-shop/sendform");
+Route::post('game-shop/sendform{game_id}', [FormSend::class, 'getForm'])->name("game-shop/sendform");
 
 Route::get('/', [GameController::class, 'categoryList'])->name('index');
 
-Route::get('game-shop/cart', [GameController::class, 'cart'])->name('game-shop/cart');
+Route::get('game-shop/cart{gameId}', [GameController::class, 'cart'])->name('game-shop/cart');
 
 Route::get('game-shop/buy', [GameController::class, 'buy'])->name('game-shop/buy')->middleware('auth');
 

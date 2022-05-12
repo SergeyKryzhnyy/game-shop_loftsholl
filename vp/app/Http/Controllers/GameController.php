@@ -48,10 +48,10 @@ class GameController extends Controller
         return $result;
     }
 
-    public function cart()
+    public function cart(Request $request)
     {
         $categories = \App\CategoryList::all();
-        $params = GameList::all()->where('id','==', $_GET['gameId']);
+        $params = GameList::all()->where('id','==',$request->gameId);
         foreach ($params as $param)
         {
             $result = $param;
@@ -59,9 +59,10 @@ class GameController extends Controller
         return view('game-shop/cart', ['gameInfo'=>$result, 'categories'=>$categories]);
     }
 
-    public function buy()
+    public function buy(Request $request)
     {
-        return view('game-shop/buy', ['game_id'=>$_GET['game_id']]);
+        $categories = \App\CategoryList::all();
+        return view('game-shop/buy', ['game_id'=>$request->game_id, 'categories'=>$categories]);
     }
 
 

@@ -107,8 +107,8 @@
 
                   @foreach($game_lists as $game_list)
                       <div class="products-category__list__item">
-                      <div class="products-category__list__item__title-product"><a href="{{ route('game-shop/cart', $params = ['gameId'=>$game_list->id])}}">{{$game_list->name}}</a></div>
-                      <div class="products-category__list__item__thumbnail"><a href="{{ route('game-shop/cart', $params = ['gameId'=>$game_list->id]) }}" class="products-category__list__item__thumbnail__link"><img src="/storage/{{$game_list->image}}" alt="Preview-image"></a></div>
+                      <div class="products-category__list__item__title-product"><a href="{{ route('game-shop/cart',['gameId'=>$game_list->id])}}">{{$game_list->name}}</a></div>
+                      <div class="products-category__list__item__thumbnail"><a href="{{ route('game-shop/cart', ['gameId'=>$game_list->id]) }}" class="products-category__list__item__thumbnail__link"><img src="/storage/{{$game_list->image}}" alt="Preview-image"></a></div>
                       <div class="products-category__list__item__description"><span class="products-price">{{$game_list->cost}} руб.</span><a href="{{ route('game-shop/buy', ['game_id'=>$game_list->id])}}" class="btn btn-blue" type="submit">Купить</a></div>
                       </div>
                   @endforeach

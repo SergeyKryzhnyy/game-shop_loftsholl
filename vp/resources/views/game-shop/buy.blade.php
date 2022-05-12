@@ -106,7 +106,7 @@
               <form action="{{ route('game-shop/sendform', ['game_id'=>$_GET['game_id']])}}" method="post" >
                   <fieldset>
                       @csrf
-                      {{$_GET['game_id']}}
+
                       <legend>Текстовые поля</legend>
                       <label> Ваше имя: <input id="name_form" name="name_form" type="text" placeholder="Имя"></input></label>
                       <label> Ваш email: <input id="email_form" name="email_form" type="email" placeholder="Email"></input></label>
